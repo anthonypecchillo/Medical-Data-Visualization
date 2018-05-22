@@ -2,7 +2,7 @@
 
 Build a single page web application that illustrates the relative quality of care one might expect to receive in the US on a state-by-state basis by rendering a US Map data visualization based on real, current, medical data from the [Centers for Medicare & Medicaid Services' (CMS) Hospital Quality Initiative.](https://www.cms.gov/Medicare/Quality-Initiatives-Patient-Assessment-Instruments/HospitalQualityInits/HospitalCompare.html)
 
-## Introduction: !TODO! (May Omit)
+<!-- ## Introduction: !TODO! (May Omit)
 
 Insert a few paragraphs here about:
 - Introduction
@@ -12,7 +12,7 @@ Insert a few paragraphs here about:
 - The purpose of this assessment: 
   - Access big, messy dataset.  
   - Filter, clean/tidy, reformat, and feed the data forward into a data visualization.
-- The data processing pipeline itself.
+- The data processing pipeline itself. -->
 
 ## Requirements:
 
