@@ -25,6 +25,7 @@ To complete this assignment, you must complete the following steps:
 ###### Data Acquisition
 - In the parent-most component, `App.jsx`:
   - Send a GET request to the `/api/heartFailures` endpoint in your web server when the component mounts.  
+  - Make sure to include your `$$app_token` in the headers of your request!
 
 
 - In your server, `index.js`, build out the request handler that responds to GET requests to your `/api/heartFailures` endpoint.  The request handler should:
