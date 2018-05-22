@@ -20,7 +20,7 @@ To complete this assignment, you must complete the following steps:
 
 ###### API Integration
 - Sign up for an account with [Data.Medicare.gov](https://data.medicare.gov/login) and acquire an App Token so that you can access CMS's Hospital Care API.
-- Create a configuration file similar to that in `config.example.js` to store your App Key.
+- Create a configuration file similar to that in `config.example.js` to store your App Token.
 
 ###### Data Acquisition
 - In the parent-most component, `App.jsx`:
@@ -28,17 +28,16 @@ To complete this assignment, you must complete the following steps:
 
 
 - In your server, `index.js`, build out the request handler that responds to GET requests to your `/api/heartFailures` endpoint.  The request handler should:
-  -  Send a request to the [*Hospital Compare: Complications and Deaths - Hopsital*API](https://dev.socrata.com/foundry/data.medicare.gov/ukfj-tt6v) to acquire all Complication and Death records in the current Hospital Compare *Complications and Deaths* database resource.
+  -  Send a request to the [*Hospital Compare* API](https://dev.socrata.com/foundry/data.medicare.gov/ukfj-tt6v) to acquire all Complication and Death records in the current Hospital Compare *Complications and Deaths* database resource.
 
 ###### Data Wrangling/Munging
 - Before sending a response back to the client, the request handler should also:
-  - Send a request to the [*Hospital Compare: Complications and Deaths - Hopsital* API](https://dev.socrata.com/foundry/data.medicare.gov/ukfj-tt6v) to acquire all Complication and Death records in the current Hospital Compare *Complications and Deaths* database resource.
-  - Filter the dataset so that it only contains records that include a particular hospital's 30-Day Post-Discharge Mortality Rate for patients who are treated at that hospital for Heart Failure.
+  - Filter the dataset so that it only contains records that include a particular hospital's 30-Day Post-Discharge Mortality Rate for patients who are treated at that hospital for **Heart Failure**.
   - Clean/Tidy the dataset to remove all unnecessary data.
   - Process the dataset by performing calculations on subsets of the data.
     - There are many hospitals per state, and there will be one record for each hospital in a state.
     - To get a single Mortality Rate score for each state, you'll need to determine the mean of all 30-Day Post-Discharge Mortality Rates across all hospitals in a given state, per state.
-  - Reformat the data shape so that it is an appropriate form to pass in to your client's data visualization component, `MapView.jsx`.
+  - Reformat the data shape so that it is in an appropriate form to pass in to your client's data visualization component, `MapView.jsx`.
     - Take a look at `/client/dummyData.js` for a reference to the appropriate data format.
 
 ###### Data Visualization:
@@ -56,7 +55,7 @@ To complete this assignment, you must complete the following steps:
     - With an API Development Environment platform such as [Postman](https://www.getpostman.com/).  (**Highly recommended.**)  
 
 
-- Some of the data recorded with key/value pairs that are cryptic to outside consumers.
+- Some of the data is recorded with key/value pairs that are cryptic to outside consumers.
   - Reference the Hospital Compare API Docs to dispell any cognitive data dissonance, specifically, the [*Measures and current data collection periods*](https://www.medicare.gov/hospitalcompare/Data/Data-Updated.html#) database reference.
     - There are multiple datasets referenced here. Make sure to read from the appropriate table!
     - **Hint:** In relevant Mortality Rate records, the `score` property has a value representative of the 30-Day Post-Discharge Mortality Rate.
@@ -69,6 +68,7 @@ To complete this assignment, you must complete the following steps:
 
 
 - The following table of query parameters may come in useful:
+
   | Parameter     | Description                                                                                             | Default Value  | Max Value  |
   | ------------- | ------------------------------------------------------------------------------------------------------- | -------------- | ---------- |
   | $limit        | The number of results to return.                                                                        | 1,000          | 50,000     |
