@@ -2,38 +2,29 @@
 
 Build a single page web application that illustrates the relative quality of care one might expect to receive in the US on a state-by-state basis by rendering a US Map data visualization based on real, current, medical data from the [Centers for Medicare & Medicaid Services' (CMS) Hospital Quality Initiative.](https://www.cms.gov/Medicare/Quality-Initiatives-Patient-Assessment-Instruments/HospitalQualityInits/HospitalCompare.html)
 
-<!-- ## Introduction: !TODO! (May Omit)
-
-Insert a few paragraphs here about:
-- Introduction
-- A little background on the data:
-  - Who does it come from?
-  - What's in the dataset?
-- The purpose of this assessment: 
-  - Access big, messy dataset.  
-  - Filter, clean/tidy, reformat, and feed the data forward into a data visualization.
-- The data processing pipeline itself. -->
-
 ## Requirements:
 
 To complete this assignment, you must complete the following steps:
 
 ###### API Integration
 - Sign up for an account with [Data.Medicare.gov](https://data.medicare.gov/login) and acquire an App Token so that you can access CMS's Hospital Care API.
-- Create a configuration file similar to that in `config.example.js` to store your App Token.
+- Create a configuration file similar to that in `config.example.js` called `config.js` to store your App Token.
 
 ###### Data Acquisition
 - In the parent-most component, `App.jsx`:
-  - Send a GET request to the `/api/heartFailures` endpoint in your web server when the component mounts.  
-  - Make sure to include your `$$app_token` in the headers of your request!
+  - Send a GET request to the `/api/heartFailures` endpoint in your web server when the component mounts.
 
 
 - In your server, `index.js`, build out the request handler that responds to GET requests to your `/api/heartFailures` endpoint.  The request handler should:
   -  Send a request to the [*Hospital Compare* API](https://dev.socrata.com/foundry/data.medicare.gov/ukfj-tt6v) to acquire all Complication and Death records in the current Hospital Compare *Complications and Deaths* database resource.
+    - Make sure to include your `$$app_token` in the headers of your request!
 
 ###### Data Wrangling/Munging
 - Before sending a response back to the client, the request handler should also:
-  - Filter the dataset so that it only contains records that include a particular hospital's 30-Day Post-Discharge Mortality Rate for patients who are treated at that hospital for **Heart Failure**.
+  - Filter the dataset so that it only contains records that include a particular hospital's 30-Day Post-Discharge Mortality Rate for patients who are treated at that hospital for **Heart Failure**.  Make sure to remove:
+    - All records that do not have 30-Day Mortality Rate data for Heart Failure patients.
+    - All records who's value of 30-Day Mortality Score are not a number! (i.e. `'Not Available'`)
+    - All records for hospitals in US Territories that are not in the main 50 US States that your data visualization can represent. (Ex. Puerto Rico)
   - Clean/Tidy the dataset to remove all unnecessary data.
   - Process the dataset by performing calculations on subsets of the data.
     - There are many hospitals per state, and there will be one record for each hospital in a state.
