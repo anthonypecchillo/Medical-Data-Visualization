@@ -60,9 +60,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-    // const note = JSON.parse(JSON.stringify(this.state.currentNote));
-
-    // const note = this.state.currentNote ? 
-    //   JSON.parse(JSON.stringify(this.state.currentNote)) : {title: '', text: '', color: ''};
