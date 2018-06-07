@@ -25,12 +25,24 @@ class App extends React.Component {
     // ------------------------------------------------------------------
     // TODO: Feed the data you receive back into your data visualization.
     // ------------------------------------------------------------------
-  
+    
+    /* START SOLUTION */
+    axios.get('/api/heartFailures')
+      .then(res => {
+        this.setState({
+          data: res.data
+        })
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    /* END SOLUTION */
   }
+
 
   handleButtonClick() {
     this.setState({
-      renderMapView: true,
+      renderMapView: true
     });
   }
 
