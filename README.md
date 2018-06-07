@@ -21,10 +21,7 @@ To complete this assignment, you must complete the following steps:
 
 ###### Data Wrangling/Munging
 - Before sending a response back to the client, the request handler should also:
-  - Filter the dataset so that it only contains records that include a particular hospital's 30-Day Post-Discharge Mortality Rate for patients who are treated at that hospital for **Heart Failure**.  Make sure to remove:
-    - All records that do not have 30-Day Mortality Rate data for Heart Failure patients.
-    - All records who's value of 30-Day Mortality Score are not a number! (i.e. `'Not Available'`)
-    - All records for hospitals in US Territories that are not in the main 50 US States that your data visualization can represent. (Ex. Puerto Rico)
+  - Filter the dataset so that it only contains records that include a particular hospital's 30-Day Post-Discharge Mortality Rate for patients who are treated at that hospital for **Heart Failure**.
   - Clean/Tidy the dataset to remove all unnecessary data.
   - Process the dataset by performing calculations on subsets of the data.
     - There are many hospitals per state, and there will be one record for each hospital in a state.
