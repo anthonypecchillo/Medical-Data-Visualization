@@ -1,3 +1,5 @@
+// THESE ARE NOT CURRENTLY BEING USED, BUT THEY SHOULD BE EXTRACTED FROM `index.js` AND STORED HERE.
+
 const { DATA_MEDICARE_GOV_APP_TOKEN } = require('../../config.js');
 
 const getHospitalCompareData = (limit, offset) => {

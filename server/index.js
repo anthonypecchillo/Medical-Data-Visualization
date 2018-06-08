@@ -86,7 +86,6 @@ const averageScoresAndReformat = function(objOfStateMortalityScores) {
     let avg = sum / objOfStateMortalityScores[state].length;
 
     result[state] = {
-      fillColor: null,
       mortalityScore: avg
     }
   }

@@ -1,3 +1,6 @@
+// THESE ARE NOT CURRENTLY BEING USED, BUT THEY SHOULD BE EXTRACTED FROM `index.js` AND STORED HERE.
+
+
 /* START SOLUTION */
 // Filters out records that do not contain 30-Day Heart Failure Mortality Rate data
 // (Reduces dataset from 90,000+ records to ~4,000 records.)

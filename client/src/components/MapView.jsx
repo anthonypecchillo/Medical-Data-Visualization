@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import _ from 'underscore';
 
 import MortalityMap from './MortalityMap.jsx';
-// import mapConfig from './map.config.js;'
+// import mapConfig from '../map.config.js;'
 
+
+// THIS IS NOT CURRENTLY BEING USED, BUT IT SHOULD BE EXTRACTED TO `map.config.js` AND STORED HERE.
 let mapConfig = {
   scope: 'usa',
   data: null,

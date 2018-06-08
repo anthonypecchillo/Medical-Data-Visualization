@@ -1,3 +1,5 @@
+// THIS IS NOT CURRENTLY BEING USED, BUT IT SHOULD BE EXTRACTED FROM `MapView.jsx` AND STORED HERE.
+
 module.exports = {
   scope: 'usa',
   data: null,
