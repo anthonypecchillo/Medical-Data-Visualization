@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import $ from 'jquery';
 
-import MapView from './MapView.jsx';
+import MortalityMap from './MortalityMap.jsx';
+import mapConfig from '../map.config.js';
+import colorScaleData from '../helpers/colorScaleData.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       data: this.props.dummyData,
-      dataReceived: false,
-      renderMapView: false
+      renderMap: false
     }
 
     this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -42,19 +43,19 @@ class App extends React.Component {
 
   handleButtonClick() {
     this.setState({
-      renderMapView: true
+      renderMap: true
     });
   }
 
-  renderMapView() {
-    if (!this.state.renderMapView) {
+  renderMap() {
+    if (!this.state.renderMap) {
       return null;
     }
 
     return (
-      <MapView stateMortalityScores={this.state.data}
-               renderMapView={this.state.renderMapViewl}
-               handleButtonClick={this.handleButtonClick}
+      <MortalityMap stateMortalityScores={colorScaleData(this.state.data)}
+                    handleButtonClick={this.handleButtonClick}
+                    mapConfig={mapConfig}
       />
     );
   }
@@ -65,7 +66,9 @@ class App extends React.Component {
         <div className="nav">
           <button onClick={this.handleButtonClick}>Render Map!</button>
         </div>
-        {this.renderMapView()}
+        <div className="map">
+          {this.renderMap()}
+        </div>
       </div>
     );
   }

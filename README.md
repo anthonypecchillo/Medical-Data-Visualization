@@ -11,7 +11,7 @@ To complete this assignment, you must complete the following steps:
 - Create a configuration file similar to that in `config.example.js` called `config.js` to store your App Token.
 
 ###### Data Acquisition
-- In the parent-most component, `App.jsx`:
+- In `App.jsx`:
   - Send a GET request to the `/api/heartFailures` endpoint in your web server when the component mounts.
 
 
@@ -27,7 +27,7 @@ To complete this assignment, you must complete the following steps:
     - There are many hospitals per state, and there will be one record for each hospital in a state.
     - To get a single Mortality Rate score for each state, you'll need to determine the mean of all 30-Day Post-Discharge Mortality Rates across all hospitals in a given state, per state.
   - Reformat the data shape so that it is in an appropriate form to pass in to your client's data visualization component, `MapView.jsx`.
-    - Take a look at `/client/dummyData.js` for a reference to the appropriate data format.
+    - Take a look at `/client/src/dummyData.js` for a reference to the appropriate data format.
 
 ###### Data Visualization:
 
@@ -38,7 +38,7 @@ To complete this assignment, you must complete the following steps:
 
 ###### Messy Data
 
-- It will take finite time to interpret the large, messy contents of the data returned in response to your API request.
+- It will take some time to interpret the large, messy contents of the data returned in response to your API request.
   - Try making a few sample requests to get a look at the data format and values you'll be working with **before moving from Data Acquisition to Data Wrangling/Munging**. You can do this either: 
     - Directly in your application by outputting your data to the console for analysis.
     - With an API Development Environment platform such as [Postman](https://www.getpostman.com/).  (**Highly recommended.**)  

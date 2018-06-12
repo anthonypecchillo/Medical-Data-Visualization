@@ -1,6 +1,4 @@
-// THIS IS NOT CURRENTLY BEING USED, BUT IT SHOULD BE EXTRACTED FROM `MapView.jsx` AND STORED HERE.
-
-module.exports = {
+const mapConfig = {
   scope: 'usa',
   data: null,
   fills: {
@@ -30,4 +28,6 @@ module.exports = {
       ].join('');
     }
   }
-}
+};
+
+export default mapConfig;
