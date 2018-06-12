@@ -6,7 +6,7 @@ function colorScaleData(data) {
   const maxValue = Math.max.apply(null, onlyScores);
   const paletteScale = d3.scale.linear().domain([minValue, maxValue]).range(["#ffe0cc", "#ff471a"]);
   
-  let finalData = JSON.parse(JSON.stringify(data));
+  let finalData = Object.assign({}, data);
   _.each(finalData, (item) => { item.fillColor = paletteScale(item.mortalityScore) });
 
   return finalData;
