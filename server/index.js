@@ -45,14 +45,14 @@ const asyncMiddleware = async (req, res, next) => {
 // 
 // This way, we save 6 x (90,000 - 4,000) operations!
 const sliceHeartFailureRecords = function(data) {
-  const usTerritories = ['AS', 'DC', 'GU', 'MP', 'PR', 'VI'];
+  const usTerritories = new Set(['AS', 'DC', 'GU', 'MP', 'PR', 'VI']);
 
   const result = data.filter(item => 
     item.measure_id === 'MORT_30_HF'    && 
     item.score      !== 'Not Available'       
   )
   .filter(item => 
-    !usTerritories.includes(item.state)
+    !usTerritories.has(item.state)
   );
 
   return result;
