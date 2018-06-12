@@ -4,7 +4,6 @@ import axios from 'axios';
 import $ from 'jquery';
 
 import MortalityMap from './MortalityMap.jsx';
-import mapConfig from '../map.config.js';
 import colorScaleData from '../helpers/colorScaleData.js';
 
 class App extends React.Component {
@@ -55,7 +54,6 @@ class App extends React.Component {
     return (
       <MortalityMap stateMortalityScores={colorScaleData(this.state.data)}
                     handleButtonClick={this.handleButtonClick}
-                    mapConfig={mapConfig}
       />
     );
   }

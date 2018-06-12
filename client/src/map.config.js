@@ -9,21 +9,19 @@ const mapConfig = {
     borderWidth: .5,
     highlightBorderWidth: .5,
     highlightBorderColor: 'black',
-    highlightFillColor: function(geo) {
-      return geo['fillColor'] || '#ddd';
-    },
+    highlightFillColor: '#FC8D59',
     popupTemplate: function(geography, data) {
       if (!data) {
         return;
       }
       return [
         '<div class="hoverinfo">',
-        '<strong>',
+        '<center><strong>',
         geography.properties.name,
         '</strong>',
-        '<br>Mortality Rate: <strong>',
-        data.mortalityScore,
-        '</strong>',
+        '<br><br><strong>Mortality Rate: <strong><br>',
+        Number(Math.round(data.mortalityScore+'e2')+'e-2'),
+        '</center>',
         '</div>'
       ].join('');
     }

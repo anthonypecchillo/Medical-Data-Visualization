@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Datamap from 'datamaps';
+import mapConfig from '../map.config.js';
 
 class MortalityMap extends React.Component {
   constructor(props) {
@@ -10,8 +11,8 @@ class MortalityMap extends React.Component {
     this.state = {
       data: null,
     }
-    this.mapConfig = JSON.parse(JSON.stringify(this.props.mapConfig));
-    this.mapConfig.data = JSON.parse(JSON.stringify(this.props.stateMortalityScores));
+    this.mapConfig = mapConfig;
+    this.mapConfig.data = this.props.stateMortalityScores;
   }
 
   componentDidMount() {
